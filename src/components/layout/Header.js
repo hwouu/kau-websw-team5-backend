@@ -1,18 +1,27 @@
 // src/components/layout/Header.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-gray-800 text-white p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold">Traffic Incident Analysis</h1>
-        <nav>
-          <a href="/" className="px-4 py-2 hover:underline">
+        <Link to="/" className="text-2xl font-bold text-green-400">
+          Traffic Incident Analysis
+        </Link>
+        <nav className="flex space-x-4">
+          <Link to="/" className="hover:text-green-400">
             Home
-          </a>
-          <a href="/login" className="px-4 py-2 hover:underline">
+          </Link>
+          <Link to="/login" className="hover:text-green-400">
             Login
-          </a>
+          </Link>
+          <Link to="/user-dashboard" className="hover:text-green-400">
+            User Dashboard
+          </Link>
+          <Link to="/admin-dashboard" className="hover:text-green-400">
+            Admin Dashboard
+          </Link>
         </nav>
       </div>
     </header>
