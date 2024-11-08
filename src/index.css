@@ -3,9 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+body {
+  
+}
+
+
 /* 전역 CSS 변수 */
 :root {
-  --primary-color: #34c759; /* 예: 초록색 메인 색상 */
+  --primary-color: #34a759; /* 예: 초록색 메인 색상 */
   --secondary-color: #ff3b30; /* 예: 경고 색상 */
   --font-primary: 'Arial, sans-serif';
 }
@@ -17,6 +25,10 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
