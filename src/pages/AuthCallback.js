@@ -27,7 +27,7 @@ function AuthCallback() {
         .then((response) => response.json())
         .then((data) => {
           if (data.access_token) {
-            // 카카오 사용자 정보 요청
+            // 토큰을 이용해 사용자 정보 요청
             return fetch("https://kapi.kakao.com/v2/user/me", {
               headers: {
                 Authorization: `Bearer ${data.access_token}`,
@@ -40,12 +40,9 @@ function AuthCallback() {
         .then((response) => response.json())
         .then((userData) => {
           console.log("User Data:", userData);
-          const userType = userData.kakao_account.email.includes("@admin.com")
-            ? "admin"
-            : "user";
-
-          // 사용자 유형에 따라 대시보드로 리디렉션
-          navigate(userType === "admin" ? "/admin-dashboard" : "/user-dashboard");
+          // 여기서는 모든 사용자를 일반 사용자로 간주하고 /user-dashboard로 이동
+          localStorage.setItem("userType", "user"); // 필요에 따라 사용자 정보 저장 가능
+          navigate("/user-dashboard");
         })
         .catch((error) => {
           console.error("인증 오류:", error);
