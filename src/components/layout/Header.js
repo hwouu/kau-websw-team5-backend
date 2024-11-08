@@ -13,9 +13,6 @@ function Header() {
           <Link to="/" className="hover:text-green-400">
             Home
           </Link>
-          <Link to="/login" className="hover:text-green-400">
-            Login
-          </Link>
           <Link to="/user-dashboard" className="hover:text-green-400">
             User Dashboard
           </Link>
